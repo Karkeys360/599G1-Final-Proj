@@ -28,7 +28,7 @@
             </div>
             <div class='profile-description'>
                 <h1 class='title-large'>Image Segmentation</h1>
-                <p class='text-medium'>CSE 455 Final Project: Abhinav Bandari, Arnav Thareja, Karthikeya Vemuri, Parthiv Mathur</p>
+                <p class='text-medium'>CSE 599G1 Final Project: Abhinav Bandari, Arnav Thareja, Karthikeya Vemuri, Parthiv Mathur</p>
                 <div class="icons">
                     <a target="_blank" href="https://youtu.be/i3IajV4LmRE" class='center'><div class='icon center'><i class="fab fa-brands fa-youtube"></i></div></a>
                     <a target="_blank" href="https://colab.research.google.com/drive/1mmPmpGhpqiboVYz_KV5yrl0dgUPcr7rM?usp=sharing" class='center'><div class='icon center'><i class="fas fa-solid fa-code"></i></div></a>
@@ -48,7 +48,7 @@
             <div class='menu-buttons flex-horizontal'>
                 <div class='name-container'>
                     <a href='#'>
-                        <p class='text-small'>Neural Style Transfer</p>
+                        <p class='text-small'>Image Segmentation</p>
                     </a>
                 </div>
                 <button type="button" id='Experience' class='menu selected' onclick='select("Experience")'><a href='#experience'><h2 class='title-xs'>Introduction</h2></a></button>
@@ -67,7 +67,7 @@
                     <div class='experience card flex-horizontal' data-aos='fade'>
                         <div class='experience content flex-vertical'>
                             <div class='experience description'>
-                                <p class='text-small'>ADD PROJECT DESCRIPTION HERE</p>
+                                <p class='text-small'>images into image segments which represent the objects within the image. We trained and tested our model on the Pascal VOC dataset.</p>
                             </div>
                         </div>
                     </div>
@@ -81,20 +81,25 @@
                     <div class='experience card' data-aos='fade'>
                         <div class='experience description'>
                             <p class='text-small'>
-                                We use the VGGNet model architecture with weights pre-trained on ImageNet.
-                                We initialize the combined image to the content image, and pass the content image, style image, and combined image into the model.
-                                The model tunes the pixel values of the combined image until it represents a good combination of the content image and the style image.
+                                We use two architectures for this task: the U-Net model and the U-Net2 model. Both are predefined models 
+                                created for image segmentation which classify each pixel within an input image as an object, outputting the 
+                                original image with clear bounding boxes around the objects within the image
                             </p>
                             <p class='text-small'>
-                                The model's loss function consists of a weighted sum of a style loss and content loss.
-                                The content loss is defined as the L1 distance between the output of the intermediate layers of the network for the content image and for the combined image.
-                                The style loss is defined as the L1 distance between Gram matrices computed on the output of the intermediate layers of the network for the style image and for the combined image.
-                                The Gram matrix we use measures the correlations between outputs of a specific layer.
+                                The U-Net model begins by applying convolutions and maxpool downsampling to encode the input image into different 
+                                feature representations. Afterwards, the model upsamples and concatenates the feature layers until arriving at the 
+                                height and width of the original image, with 20 channels. Each set of 20 pixels at the same coordinates in all the 
+                                channels represent the probability of that pixel being in one of the 20 classes. 
                             </p>
                             <p class='text-small'>
-                                Since the model's loss function consists of a weighted sum of the style loss and content loss,
-                                we experimented with a range of weights for the style and content losses, and found that the generated images looked best when the style loss weight dominated the content loss weight.
-                                In practice, we found that using a L1 loss function worked better than an L2 loss function, and produced combined images with more apparent influence from the style image.
+                                The U2-Net model works similarly to the U-Net model, with a key difference. Instead of simple convolutions / upsamples, 
+                                the model is composed of ReSidual Ublock (RSU)s. RSUs are composed of an input convolutional layer, a U-Net-Like symmetric 
+                                encoder-decoder structure, and a residual connection which combines local and multi-scale features. Essentially the U2-Net 
+                                architecture is a nested architecture, where each step in the model is a U-Net like structure. 
+                            </p>
+                            <p class='text-small'>
+                                We are using cross-entropy loss to determine how accurate our models are. Essentially, we will examine each set of 20 pixels 
+                                depth-wise across 20 channels  of our output image and compare it to the one-hot-encoded vector for the corresponding truth image.
                             </p>
                         </div>
                     </div>
