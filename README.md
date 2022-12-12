@@ -1,4 +1,4 @@
-# Neural style Transfer
+# Semantic Image Segmentation
 
 CSE 455 Final Project by Abhinav Bandari, Arnav Thareja, Karthikeya Vemuri, Parthiv Mathur
 
