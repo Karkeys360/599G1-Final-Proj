@@ -65,30 +65,32 @@
                     <h2 class='title-medium portfolio-title'>Abstract</h2>
                 </div>
                 <div class='section-container flex-vertical'>
-                    <div class='experience card' data-aos='fade'>
-                        <div class='experience description'>
-                            <p class='text-small'>
-                                We use two architectures for this task: the U-Net model and the U2-Net model. Both are predefined models 
-                                created for image segmentation which classify each pixel within an input image as an object, outputting the 
-                                original image with the boundries of the objects within the image clearly shaded.
-                            </p>
-                            <p class='text-small'>
-                                The U-Net model begins by applying convolutions and maxpool downsampling to encode the input image into different 
-                                feature representations. Afterwards, the model upsamples and concatenates the feature layers until arriving at the 
-                                height and width of the original image, with 20 channels. Each of the 20 channels correspond to the probability of
-                                that pixel being in each one of the 20 classes we are looking to label.
-                            </p>
-                            <p class='text-small'>
-                                The U2-Net model works similarly to the U-Net model, with a key difference. Instead of simple convolutions / upsamples, 
-                                the model is composed of ReSidual Ublock (RSU)s. RSUs are composed of an input convolutional layer, a U-Net-Like symmetric 
-                                encoder-decoder structure, and a residual connection which combines local and multi-scale features. Essentially the U2-Net 
-                                architecture is a nested architecture, where each step in the model is a U-Net like structure. 
-                            </p>
-                            <p class='text-small'>
-                                Currently we are training our model on the PASCAL-VOC dataset with cross-entropy loss to determine how accurate our models are. 
-                                Essentially, we will examine each pixel depth-wise across 21 channels of our output image and compare it to the 
-                                one-hot-encoded vector for the corresponding truth image.
-                            </p>
+                    <div class='experience card flex-horizontal' data-aos='fade'>
+                        <div class='experience content flex-vertical'>
+                            <div class='experience description'>
+                                <p class='text-small'>
+                                    We use two architectures for this task: the U-Net model and the U2-Net model. Both are predefined models 
+                                    created for image segmentation which classify each pixel within an input image as an object, outputting the 
+                                    original image with the boundries of the objects within the image clearly shaded.
+                                </p>
+                                <p class='text-small'>
+                                    The U-Net model begins by applying convolutions and maxpool downsampling to encode the input image into different 
+                                    feature representations. Afterwards, the model upsamples and concatenates the feature layers until arriving at the 
+                                    height and width of the original image, with 20 channels. Each of the 20 channels correspond to the probability of
+                                    that pixel being in each one of the 20 classes we are looking to label.
+                                </p>
+                                <p class='text-small'>
+                                    The U2-Net model works similarly to the U-Net model, with a key difference. Instead of simple convolutions / upsamples, 
+                                    the model is composed of ReSidual Ublock (RSU)s. RSUs are composed of an input convolutional layer, a U-Net-Like symmetric 
+                                    encoder-decoder structure, and a residual connection which combines local and multi-scale features. Essentially the U2-Net 
+                                    architecture is a nested architecture, where each step in the model is a U-Net like structure. 
+                                </p>
+                                <p class='text-small'>
+                                    Currently we are training our model on the PASCAL-VOC dataset with cross-entropy loss to determine how accurate our models are. 
+                                    Essentially, we will examine each pixel depth-wise across 21 channels of our output image and compare it to the 
+                                    one-hot-encoded vector for the corresponding truth image.
+                                </p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -98,11 +100,9 @@
                     <h2 class='title-medium portfolio-title'>Problem Statement</h2>
                 </div>
                 <div class='section-container flex-vertical'>
-                    <div class='experience card flex-horizontal' data-aos='fade'>
-                        <div class='experience content flex-vertical'>
-                            <div class='experience description'>
-                                <p class='text-small'>Given an input image, can we successfully partition it up into its objects and the background?</p>
-                            </div>
+                    <div class='experience card' data-aos='fade'>
+                        <div class='experience description'>
+                            <p class='text-small'>Given an input image, can we successfully partition it up into its objects and the background?</p>
                         </div>
                     </div>
                 </div>
