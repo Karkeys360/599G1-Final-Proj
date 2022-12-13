@@ -441,10 +441,13 @@
                                 function as opposed to cross-entropy loss. DICE loss works by calculating the intersection of the ground truth image and the predicted
                                 image (essentially how much of the two pictures overlap), multiplying that value by 2, and dividing that value by the area of the two images
                                 combined. Currently, when using cross-entropy loss, if the model predicts that the entire image is background, it can acheive a decent loss 
-                                value without truly learning the boundries of objects and isn't significantly penalized. With Dice loss, if this were to happen, 
-                                the intersection would be 0 and the model would be approprietly punished. Essentially, the model is forced to learn boundaries at a greater 
-                                depth when evaluated by Dice loss, unlike with cross-entropy loss where the model can cheat and minimize loss without outputing better 
-                                segmentations. Thus, with Dice loss, the model should improve its outputs.
+                                value without truly learning the boundries of
+                                objects and isn't significantly penalized. With
+                                DICE loss, if this were to happen, 
+                                the intersection would be 0 and the model would
+                                be penalized. Essentially, the model is forced to learn boundaries at a greater 
+                                depth when evaluated by DICE loss, unlike with cross-entropy loss where the model can cheat and minimize loss without outputing better 
+                                segmentations. Thus, with DICE loss, the model should improve its outputs.
                                 Additionally, we can try to train/test our model on a new dataset, like the CityScapes dataset. This dataset contains pictures depicting
                                 urban environments, which is markedly different than the PASCAL VOC dataset. We could try training and testing our current model on the images
                                 in the CityScapes dataset, to see how effective our model is for more urban-based visuals. Additionally, we could try training the model on the 
