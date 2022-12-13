@@ -70,12 +70,18 @@ function updateCurrentSection() {
     root.style.setProperty('--width-0', scrollPercent('#experience') + '%');
     root.style.setProperty('--width-1', scrollPercent('#projects') + '%');
     root.style.setProperty('--width-2', scrollPercent('#coursework') + '%');
-    root.style.setProperty('--width-3', scrollPercent('#resume') + '%');
+    root.style.setProperty('--width-3', scrollPercent('#conclusion') + '%');
+    root.style.setProperty('--width-4', scrollPercent('#nextSteps') + '%');
+    root.style.setProperty('--width-5', scrollPercent('#resume') + '%');
 
     if (document.querySelector('#resume').getBoundingClientRect().bottom + document.querySelector('footer').getBoundingClientRect().height <= window.innerHeight + 100) {
         select('Resume');
-    } else if (parseFloat(root.style.getPropertyValue('--width-3')) > 0) {
+    } else if (parseFloat(root.style.getPropertyValue('--width-5')) > 0) {
         select('Resume');
+    } else if (parseFloat(root.style.getPropertyValue('--width-4')) > 0) {
+        select('NextSteps');
+    } else if (parseFloat(root.style.getPropertyValue('--width-3')) > 0) {
+        select('Conclu');
     } else if (parseFloat(root.style.getPropertyValue('--width-2')) > 0) {
         select('Coursework');
     } else if (parseFloat(root.style.getPropertyValue('--width-1')) > 0) {
