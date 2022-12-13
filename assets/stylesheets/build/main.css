@@ -165,7 +165,7 @@ body {
 }
 
 .profile-picture {
-  border-radius: 50%;
+  border-radius: 0;
   box-shadow: 0 0 10px black;
   border: 1.5px solid var(--main-text-color);
 }
