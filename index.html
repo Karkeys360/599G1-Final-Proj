@@ -114,7 +114,7 @@
                 <div class='section-container grid-3'>
                     <div class='project card flex-vertical' data-aos='fade'>
                         <div class='project title'>
-                            <p class='title-small'>Style Image</p>
+                            <p class='title-small'>Image</p>
                         </div>
                         <div class='project description'>
                             <p class='text-small'>Images found in the PASCAL VOC dataset</p>
@@ -122,7 +122,7 @@
                     </div>
                     <div class='project card flex-vertical' data-aos='fade'>
                         <div class='project title'>
-                            <p class='title-small'>Content Image</p>
+                            <p class='title-small'>Predicted Mask</p>
                         </div>
                         <div class='project description'>
                             <p class='text-small'>Image Segmentation predictions made by the UNet model</p>
@@ -130,7 +130,7 @@
                     </div>
                     <div class='project card flex-vertical' data-aos='fade'>
                         <div class='project title'>
-                            <p class='title-small'>Combined Image</p>
+                            <p class='title-small'>Ground Truth Mask</p>
                         </div>
                         <div class='project description'>
                             <p class='text-small'>Ground Truth Image Segmentations from the PASCAL VOC dataset</p>
@@ -379,6 +379,7 @@
                             <p class='text-small'>
                                 Our model didn’t do well at correctly classifying the objects in the foreground. Oftentimes, even if the image predicted the correct shape of the objects in the foreground, it classified them differently compared to the ground truth classification (this is seen as the objects in our prediction and in the ground truth are different colors - each color corresponds to a certain class).
                             </p>
+                            <img src='assets/images/images/unet_40_3_losses.png' class='project image'>
                         </div>
                     </div>
                 </div>
