@@ -118,6 +118,16 @@
                                 We used the 2012 version of the Pascal VOC segmentation dataset. The dataset has the following classes: background, aeroplane, bicycle, bird, boat, bottle, bus, car, cat, chair, cow, diningtable, dog, horse, motorbike, person, pottedplant, sheep, sofa, train, tvmonitor. Any pixels whose class cannot be determined are labelled as ‘void’.
                                 PyTorch hosts this dataset, so we load it from there. Since the input images are not of uniform size, we resize them to 128 by 128 pixels, which is the input size for U-Net and U-2-Net. Since the input images and the output masks must be of the same size, we also resize the mask labels to be of size 128 by 128 pixels.  We normalize the input images channel-wise to mean of 0 and standard deviation of 1. However, we don’t normalize the mask labels. 
                                 We train the U-Net model for 20 epochs, and the U-2-Net model for 200 epochs. We perform a hyperparameter search for learning rate.
+                                <div class='project card flex-vertical' data-aos='fade'>
+                                    <div class='project image-container center'>
+                                        <img src='assets/images/images/UNet.png' class='project image'>
+                                    </div>
+                                </div>
+                                <div class='project card flex-vertical' data-aos='fade'>
+                                    <div class='project image-container center'>
+                                        <img src='assets/images/images/U2Net.png' class='project image'>
+                                    </div>
+                                </div>
                             </p>
                         </div>
                     </div>
