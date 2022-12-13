@@ -55,6 +55,7 @@
                 <button type="button" id='Projects' class='menu' onclick='select("Projects")'><a href='#projects'><h2 class='title-xs'>Abstract</h2></a></button>
                 <button type="button" id='Coursework' class='menu' onclick='select("Coursework")'><a href='#coursework'><h2 class='title-xs'>Gallery</h2></a></button>
                 <button type="button" id='Resume' class='menu' onclick='select("Resume")'><a href='#resume'><h2 class='title-xs'>Other</h2></a></button>
+                <button type="button" id='Conclu' class='menu' onclick='select("Conclu")'><a href='#conclusion'><h2 class='title-xs'>Other</h2></a></button>
             </div>
         </div>
 
@@ -388,6 +389,28 @@
                         <a target='_blank' href="https://youtu.be/i3IajV4LmRE" class="full plain">
                             <h2 class='text-medium'>Watch Demo Video</h2>
                         </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id='conclusion'>
+            <div class='title-container center'>
+                <h2 class='title-medium portfolio-title'>Conclusion</h2>
+            </div>
+            <div class='section-container flex-vertical'>
+                <div class='experience card' data-aos='fade'>
+                    <div class='experience description'>
+                        <p class='text-small'>
+                            As you can see, the results were a bit of a mixed bag. For most images, the model was able to detect some primary object in the image, but oftentimes failed to find the specific correct boundaries and found object “blobs” instead. 
+
+                            For some images, our model finds the object borders quite well, and you can see the outlines of objects in our predicted segmentations. However, the objects aren’t always fully colored (as in the model finds the outline, but believes some of the object in the middle is part of the background, and makes it black).
+                        </p>
+                        <p class='text-small'>
+                            Our model performed quite well at separating the foreground and background components of the input images. Additionally, our model was able to generate shapes that roughly matched that of the objects from the input image, aligning reasonably well with the ground truth segmentations. Our model was ok at generating borders for objects in the foreground, although it struggled with that from time to time.
+                        </p>
+                        <p class='text-small'>
+                            Our model didn’t do well at correctly classifying the objects in the foreground. Oftentimes, even if the image predicted the correct shape of the objects in the foreground, it classified them differently compared to the ground truth classification (this is seen as the objects in our prediction and in the ground truth are different colors - each color corresponds to a certain class).
+                        </p>
                     </div>
                 </div>
             </div>
