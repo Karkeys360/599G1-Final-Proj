@@ -47,11 +47,11 @@
         <div class='portfolio-menu flex-vertical' data-aos='fade-down' data-aos-anchor='#experience' data-aos-anchor-placement='top-top' data-aos-offset='-60'>
             <div class='menu-buttons flex-horizontal'>
                 <div class='name-container'>
-                    <a href='#'>
+                    <a href='#' class="selected">
                         <p class='text-small'>Image Segmentation</p>
                     </a>
                 </div>
-                <button type="button" id='Projects' class='menu selected' onclick='select("Projects")'><a href='#projects'><h2 class='title-xs'>Abstract</h2></a></button>
+                <button type="button" id='Projects' class='menu' onclick='select("Projects")'><a href='#projects'><h2 class='title-xs'>Abstract</h2></a></button>
                 <button type="button" id='Experience' class='menu' onclick='select("Experience")'><a href='#experience'><h2 class='title-xs'>Problem Statement</h2></a></button>
                 <button type="button" id='Coursework' class='menu' onclick='select("Coursework")'><a href='#coursework'><h2 class='title-xs'>Gallery</h2></a></button>
                 <button type="button" id='Conclu' class='menu' onclick='select("Conclu")'><a href='#conclusion'><h2 class='title-xs'>Conclusion</h2></a></button>
@@ -379,7 +379,9 @@
                             <p class='text-small'>
                                 Our model didn’t do well at correctly classifying the objects in the foreground. Oftentimes, even if the image predicted the correct shape of the objects in the foreground, it classified them differently compared to the ground truth classification (this is seen as the objects in our prediction and in the ground truth are different colors - each color corresponds to a certain class).
                             </p>
-                            <img src='assets/images/images/unet_40_3_losses.png' class='project image'>
+                            <div class='project image-container center'>
+                                <img src='assets/images/images/unet_40_3_losses.png' class='project image'>
+                            </div>
                         </div>
                     </div>
                 </div>
