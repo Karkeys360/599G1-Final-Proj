@@ -31,8 +31,10 @@
                 <p class='text-medium'>CSE 599G1 Final Project: Abhinav Bandari, Arnav Thareja, Karthikeya Vemuri, Parthiv Mathur</p>
                 <div class="icons">
                     <a target="_blank" href="https://youtu.be/i3IajV4LmRE" class='center'><div class='icon center'><i class="fab fa-brands fa-youtube"></i></div></a>
-                    <a target="_blank" href="https://colab.research.google.com/drive/1mmPmpGhpqiboVYz_KV5yrl0dgUPcr7rM?usp=sharing" class='center'><div class='icon center'><i class="fas fa-solid fa-code"></i></div></a>
-                    <a target="_blank" href="mailto:athareja@uw.edu,abandari@uw.edu,karkeys1@uw.edu,alan8621@uw.edu" class='center'><div class='icon center'><i class="fas fa-envelope fa-2x"></i></div></a>
+                    <a target="_blank" href="https://colab.research.google.com/drive/1dP7yllytqsf9SYH2f2j9420lNDCiWopt?usp=sharing" class='center'><div class='icon center'><i class="fas fa-solid fa-code"></i></div></a>
+                    <a target="_blank" href="https://www.linkedin.com/in/arnavthareja/" class='center'><div class='icon center'><i class="fab fa-linkedin fa-2x"></i></div></a>
+                    <a target="_blank" href="https://github.com/Karkeys360/599G1-Final-Proj" class='center'><div class='icon center'><i class="fab fa-github fa-2x"></i></div></a>
+                    <a target="_blank" href="mailto:athareja@uw.edu,abandari@uw.edu,karkeys1@uw.edu,pkm8@uw.edu" class='center'><div class='icon center'><i class="fas fa-envelope fa-2x"></i></div></a>
                 </div>
             </div>
             <div class='down-arrow center'>
@@ -49,23 +51,24 @@
                         <p class='text-small'>Image Segmentation</p>
                     </a>
                 </div>
-                <button type="button" id='Experience' class='menu' onclick='select("Experience")'><a href='#experience'><h2 class='title-xs'>Problem Statement</h2></a></button>
+                <button type="button" id='Experience' class='menu' onclick='select("Experience")'><a href='#experience'><h2 class='title-xs'>Problem</h2></a></button>
                 <button type="button" id='Projects' class='menu' onclick='select("Projects")'><a href='#projects'><h2 class='title-xs'>Abstract</h2></a></button>
                 <button type="button" id='Coursework' class='menu' onclick='select("Coursework")'><a href='#coursework'><h2 class='title-xs'>Gallery</h2></a></button>
-                <button type="button" id='Conclu' class='menu' onclick='select("Conclu")'><a href='#conclusion'><h2 class='title-xs'>Conclusion</h2></a></button>
-                <button type="button" id='Resume' class='menu' onclick='select("Resume")'><a href='#resume'><h2 class='title-xs'>Other</h2></a></button>
+                <button type="button" id='Conclu' class='menu' onclick='select("Conclu")'><a href='#conclusion'><h2 class='title-xs'>Results</h2></a></button>
+                <button type="button" id='NextSteps' class='menu' onclick='select("NextSteps")'><a href='#nextSteps'><h2 class='title-xs'>Next Steps</h2></a></button>
+                <button type="button" id='Resume' class='menu' onclick='select("Resume")'><a href='#resume'><h2 class='title-xs'>Links</h2></a></button>
             </div>
         </div>
 
         <div class='portfolio flex-vertical'>
             <div id='experience'>
                 <div class='title-container center'>
-                    <h2 class='title-medium portfolio-title'>Problem Statement</h2>
+                    <h2 class='title-medium portfolio-title'>Problem</h2>
                 </div>
                 <div class='section-container flex-vertical'>
                     <div class='experience card' data-aos='fade'>
                         <div class='experience description'>
-                            <p class='text-small'>Given an input image, can we successfully partition it into its objects and the background?</p>
+                            <p class='text-small'>Given an input image, we aim to partition it into its objects and the background at the pixel level.</p>
                         </div>
                     </div>
                 </div>
@@ -81,25 +84,23 @@
                                 <p class='text-small'>
                                     We use two architectures for this task: the U-Net model and the U2-Net model. Both are predefined models 
                                     created for image segmentation which classify each pixel within an input image as an object, outputting the 
-                                    original image with the boundries of the objects within the image clearly shaded.
+                                    original image with the boundaries of the objects within the image clearly shaded.
                                 </p>
                                 <p class='text-small'>
                                     The U-Net model begins by applying convolutions and maxpool downsampling to encode the input image into different 
                                     feature representations. Afterwards, the model upsamples and concatenates the feature layers until arriving at the 
-                                    height and width of the original image, with 20 channels. Each of the 20 channels correspond to the probability of
-                                    that pixel being in each one of the 20 classes we are looking to label.
+                                    height and width of the original image, with 22 channels. Each of the 22 channels corresponds to the probability of
+                                    that pixel being in each one of the 20 classes we are looking to label, in addition to the background the void classes.
                                 </p>
                                 <p class='text-small'>
-                                    The U2-Net model works similarly to the U-Net model, with a key difference. Instead of simple convolutions / upsamples, 
-                                    the model is composed of ReSidual Ublock
-                                    (RSU)s. RSUs are composed of an input
-                                    convolutional layer, a U-Net-esque symmetric 
-                                    encoder-decoder structure, and a residual connection which combines local and multi-scale features. Essentially the U2-Net 
+                                    The U2-Net model works similarly to the U-Net model, with a key difference. Instead of simple convolutions and upsamples, 
+                                    the model is composed of ReSidual U-blocks (RSUs). RSUs are composed of an input convolutional layer, a U-Net-like symmetric 
+                                    encoder-decoder structure, and a residual connection which combines local and multi-scale features. Essentially, the U2-Net 
                                     architecture is a nested architecture, where each step in the model is a U-Net like structure. 
                                 </p>
                                 <p class='text-small'>
-                                    Currently we are training our model on the PASCAL-VOC dataset with cross-entropy loss to determine how accurate our models are. 
-                                    Essentially, we will examine each pixel depth-wise across 21 channels of our output image and compare it to the 
+                                    Currently, we are training our model on the PASCAL-VOC dataset with cross-entropy loss to determine how accurate our models are. 
+                                    Essentially, we will examine each pixel depth-wise across 22 channels of our output image and compare it to the 
                                     one-hot-encoded vector for the corresponding truth image.
                                 </p>
                             </div>
@@ -109,13 +110,13 @@
             </div>
             <div id='related wurks'>
                 <div class='title-container center'>
-                    <h2 class='title-medium portfolio-title'>Related Works</h2>
+                    <h2 class='title-medium portfolio-title'>Related Work</h2>
                 </div>
                 <div class='section-container flex-vertical'>
                     <div class='experience card' data-aos='fade'>
                         <div class='experience description'>
                             <p class='text-small'>
-                                Some of the model architectures we considered include U-Net, DeepLab, Mask R-CNN, and U-2-Net. We focused on implementing U-Net and U-2-Net so that we could compare their performances.
+                                Some of the model architectures we considered include U-Net, DeepLab, Mask R-CNN, and U2-Net. We focused on implementing U-Net and U2-Net so that we could compare their performances.
                             </p>
                         </div>
                     </div>
@@ -129,9 +130,35 @@
                     <div class='experience card' data-aos='fade'>
                         <div class='experience description'>
                             <p class='text-small'>
-                                We used the 2012 version of the Pascal VOC segmentation dataset. The dataset has the following classes: background, aeroplane, bicycle, bird, boat, bottle, bus, car, cat, chair, cow, diningtable, dog, horse, motorbike, person, pottedplant, sheep, sofa, train, tvmonitor. Any pixels whose class cannot be determined are labelled as ‘void’.
-                                PyTorch hosts this dataset, so we load it from there. Since the input images are not of uniform size, we resize them to 128 by 128 pixels, which is the input size for U-Net and U-2-Net. Since the input images and the output masks must be of the same size, we also resize the mask labels to be of size 128 by 128 pixels.  We normalize the input images channel-wise to mean of 0 and standard deviation of 1. However, we don’t normalize the mask labels. 
-                                We train the U-Net model for 20 epochs, and the U-2-Net model for 200 epochs. We perform a hyperparameter search for learning rate.
+                                We used the 2012 version of the Pascal VOC segmentation dataset. The dataset has the following classes:
+                            </p>
+                            <ul>
+                                <li class='text-small'>background</li>
+                                <li class='text-small'>aeroplane</li>
+                                <li class='text-small'>bicycle</li>
+                                <li class='text-small'>bird</li>
+                                <li class='text-small'>boat</li>
+                                <li class='text-small'>bottle</li>
+                                <li class='text-small'>bus</li>
+                                <li class='text-small'>car</li>
+                                <li class='text-small'>cat</li>
+                                <li class='text-small'>chair</li>
+                                <li class='text-small'>cow</li>
+                                <li class='text-small'>diningtable</li>
+                                <li class='text-small'>dog</li>
+                                <li class='text-small'>horse</li>
+                                <li class='text-small'>motorbike</li>
+                                <li class='text-small'>person</li>
+                                <li class='text-small'>pottedplant</li>
+                                <li class='text-small'>sheep</li>
+                                <li class='text-small'>sofa</li>
+                                <li class='text-small'>train</li>
+                                <li class='text-small'>tvmonitor</li>
+                            </ul>
+                            <p class='text-small'>
+                                Any pixels whose class cannot be determined are labelled as ‘void’.
+                                PyTorch hosts this dataset, so we load it from there. Since the input images are not of uniform size, we resize them to 128 by 128 pixels, which is the input size for U-Net and U2-Net. Since the input images and the output masks must be of the same size, we also resize the mask labels to be of size 128 by 128 pixels.  We normalize the input images channel-wise to mean of 0 and standard deviation of 1. However, we don’t normalize the mask labels. 
+                                We train the U-Net model for 20 epochs, and the U2-Net model for 200 epochs. We perform a hyperparameter search for learning rate.
                             </p>
                             <div class='project image-container center'>
                                 <img src='assets/images/images/UNet.png' class='project image'>
@@ -153,7 +180,7 @@
                             <p class='title-small'>Image</p>
                         </div>
                         <div class='project description'>
-                            <p class='text-small'>Images Found in the PASCAL VOC Dataset</p>
+                            <p class='text-small'>Images found in the PASCAL VOC dataset</p>
                         </div>
                     </div>
                     <div class='project card flex-vertical' data-aos='fade'>
@@ -161,8 +188,7 @@
                             <p class='title-small'>Predicted Mask</p>
                         </div>
                         <div class='project description'>
-                            <p class='text-small'>Image Segmentation Masks
-                            produced by the UNet model</p>
+                            <p class='text-small'>Image segmentation masks predicted by the U-Net model</p>
                         </div>
                     </div>
                     <div class='project card flex-vertical' data-aos='fade'>
@@ -170,7 +196,7 @@
                             <p class='title-small'>Ground Truth Mask</p>
                         </div>
                         <div class='project description'>
-                            <p class='text-small'>Ground Truth Image Segmentations from the PASCAL VOC Dataset</p>
+                            <p class='text-small'>Ground truth image segmentations from the PASCAL VOC dataset</p>
                         </div>
                     </div>
                 </div>
@@ -404,23 +430,17 @@
                     <div class='experience card' data-aos='fade'>
                         <div class='experience description'>
                             <p class='text-small'>
-                                For this project, we used qualitative analysis as our primary performance metric. In other words, we looked at our model's output segmentations and the ground truth segmentations, and evaluated based on looks how well our model performed.
+                                For this project, we used qualitative analysis as our primary performance metric. In other words, we looked at our model's output segmentations and the ground truth segmentations, and evaluated our model's performance based on apparent similarity.
 
-                                As you can see, the results were a bit of a mixed bag. For most images, the model was able to detect some primary object in the image, but oftentimes failed to find the specific correct boundaries and found object “blobs” instead. 
+                                As shown above, the results were a bit of a mixed bag. For most images, the model was able to detect some primary object in the image, but oftentimes failed to find the specific correct boundaries and found object “blobs” instead. 
     
-                                For some images, our model finds the object borders quite well, and you can see the outlines of objects in our predicted segmentations. However, the objects aren’t always fully colored (as in the model finds the outline, but believes some of the object in the middle is part of the background, and makes it black).
+                                For some images, our model finds the object borders quite well, and the outlines of objects are apparent in our predicted segmentations. However, the objects aren’t always fully colored: the model sometimes finds the outline, but believes some part of the object to be part of the background.
                             </p>
                             <p class='text-small'>
-                                Our model performed quite well at separating the foreground and background of the input images. Additionally, our model was able to generate shapes that roughly matched that of the objects from the input image, aligning reasonably well with the ground truth segmentations.
+                                Our model performed quite well at separating the foreground and background of the input images. Additionally, our model was able to generate shapes that roughly matched those of the objects from the input image, aligning reasonably well with the ground truth segmentations.
                             </p>
                             <p class='text-small'>
-                                Our model didn’t do well at correctly
-                                classifying the objects in the foreground. Even
-                                if the image predicted the correct shape of the
-                                objects in the foreground, it classified them
-                                differently compared to the ground truth
-                                classification (note that the objects in our
-                                prediction and in the ground truth are often different colors).
+                                Our model didn’t do well at correctly classifying the objects in the foreground. Oftentimes, even if the image predicted the correct shape of the objects in the foreground, it classified them differently compared to the ground truth classification. This can be seen above, where the objects in our prediction and the ground truth are different colors - each color corresponds to a certain class.
                             </p>
                             <div class='project image-container center'>
                                 <img src='assets/images/images/unet_40_3_losses.png' class='project image'>
@@ -429,7 +449,7 @@
                     </div>
                 </div>
             </div>
-            <div id= 'mext Steps'>
+            <div id='nextSteps'>
                 <div class='title-container center'>
                     <h2 class='title-medium portfolio-title'>Next Steps</h2>
                 </div>
@@ -440,18 +460,17 @@
                                 There are a number of actions we can take to continue developing this project. One such action is to implement DICE loss as our loss 
                                 function as opposed to cross-entropy loss. DICE loss works by calculating the intersection of the ground truth image and the predicted
                                 image (essentially how much of the two pictures overlap), multiplying that value by 2, and dividing that value by the area of the two images
-                                combined. Currently, when using cross-entropy loss, if the model predicts that the entire image is background, it can acheive a decent loss 
-                                value without truly learning the boundries of
-                                objects and isn't significantly penalized. With
-                                DICE loss, if this were to happen, 
-                                the intersection would be 0 and the model would
-                                be penalized. Essentially, the model is forced to learn boundaries at a greater 
-                                depth when evaluated by DICE loss, unlike with cross-entropy loss where the model can cheat and minimize loss without outputing better 
+                                combined. Currently, when using cross-entropy loss, if the model predicts that the entire image is background, it can achieve a decent loss 
+                                value without truly learning the boundaries of objects and isn't significantly penalized. With DICE loss, if this were to happen, 
+                                the intersection would be 0 and the model would be appropriately punished. Essentially, the model is forced to learn boundaries at a greater 
+                                depth when evaluated by DICE loss, unlike with cross-entropy loss where the model can cheat and minimize loss without outputting better 
                                 segmentations. Thus, with DICE loss, the model should improve its outputs.
+                            </p>
+                            <p class='text-small'>
                                 Additionally, we can try to train/test our model on a new dataset, like the CityScapes dataset. This dataset contains pictures depicting
                                 urban environments, which is markedly different than the PASCAL VOC dataset. We could try training and testing our current model on the images
                                 in the CityScapes dataset, to see how effective our model is for more urban-based visuals. Additionally, we could try training the model on the 
-                                PASCAL VOC dataset and training it on the CityScapes dataset, to see how well our model performs on a class of images completely new to it.
+                                PASCAL VOC dataset and testing it on the CityScapes dataset, to see how well our model transfers to a class of images completely new to it.
                             </p>
                         </div>
                     </div>
@@ -459,7 +478,7 @@
             </div>
             <div id='resume'>
                 <div class='title-container center'>
-                    <h2 class='title-medium portfolio-title'>Other</h2>
+                    <h2 class='title-medium portfolio-title'>Links</h2>
                 </div>
                 <div class="section-container flex-vertical">
                     <div class='resume card'>
