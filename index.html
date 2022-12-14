@@ -156,7 +156,8 @@
                                 <li class='text-small'>tvmonitor</li>
                             </ul>
                             <p class='text-small'>
-                                Any pixels whose class cannot be determined are labelled as ‘void’.
+                                Any pixels whose class cannot be determined are
+                                labeled as ‘void’.
                                 PyTorch hosts this dataset, so we load it from there. Since the input images are not of uniform size, we resize them to 128 by 128 pixels, which is the input size for U-Net and U2-Net. Since the input images and the output masks must be of the same size, we also resize the mask labels to be of size 128 by 128 pixels.  We normalize the input images channel-wise to mean of 0 and standard deviation of 1. However, we don’t normalize the mask labels. 
                                 We train the U-Net model for 20 epochs, and the U2-Net model for 200 epochs. We perform a hyperparameter search for learning rate.
                             </p>
